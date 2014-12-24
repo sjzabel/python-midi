@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from distutils.core import setup, Extension
+from distutils.spawn import find_executable
 
 __base__ = {
     'name':'midi', 
@@ -34,9 +35,8 @@ def configure_platform():
     from sys import platform
     ns = __base__.copy()
     # currently, only the ALSA sequencer is supported
-    if platform.startswith('linux'):
+    if platform.startswith('linux') and find_executable('swig'):
         setup_alsa(ns)
-        pass
     else:
         print "No sequencer available for '%s' platform." % platform
     return ns
