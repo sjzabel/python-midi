@@ -1,4 +1,4 @@
-# Python MIDI
+=Python MIDI=
 [![Build Status](https://travis-ci.org/sjzabel/good-statsd.svg?branch=master)](https://travis-ci.org/sjzabel/good-statsd)
 
 Python, for all its amazing ability out of the box, does not provide you with
@@ -18,14 +18,14 @@ are someone like me, who has spent a long time looking for a Python MIDI
 framework, than this might be a good fit.  It's not perfect, but it has a large
 feature set to offer.
 
-## Features
+==Features==
 
 * High level class types that represent individual MIDI events.
 * A multi-track aware container, that allows you to manage your MIDI events.
 * A tempo map that actively keeps track of tempo changes within a track.
 * A reader and writer, so you can read and write your MIDI tracks to disk.
 
-## Installation
+==Installation==
 
 Follow the [http://docs.python.org/2/install/index.html normal procedure for Python module installation]:
 
@@ -33,7 +33,7 @@ Follow the [http://docs.python.org/2/install/index.html normal procedure for Pyt
 python setup.py install
 </pre>
 
-### Examine a MIDI File
+===Examine a MIDI File===
 
 To examine the contents of a MIDI file run
 
@@ -43,9 +43,9 @@ $ mididump.py mary.mid
 
 This will print out a representation of "Mary had a Little Lamb" as executable python code.
 
-## Example Usage
+==Example Usage==
 
-### Building a MIDI File from scratch
+===Building a MIDI File from scratch===
 
 It is easy to build a MIDI track from scratch.
 
@@ -98,7 +98,7 @@ because MIDI represents ticks in relative time.  The actual tick offset of the
 MidiTrackEvent is the sum of its tick and all the ticks from previous events.
 In this example, the EndOfTrackEvent would occur at tick 101 (0 + 100 + 1).
 
-#### Side Note: What is a MIDI Tick?
+====Side Note: What is a MIDI Tick?====
 
 The problem with ticks is that they don't give you any information about when
 they occur without knowing two other pieces of information, the resolution, and
@@ -148,7 +148,7 @@ here is a quick refresher on Time Signatures:
 
 http://en.wikipedia.org/wiki/Time_signature
 
-### Reading our Track back from Disk
+===Reading our Track back from Disk===
 
 It's just as easy to load your MIDI file from disk.
 
@@ -158,7 +158,7 @@ pattern = midi.read_midifile("example.mid")
 print pattern
 </pre>
 
-## Sequencer
+==Sequencer==
 
 If you use this toolkit under Linux, you can take advantage of ALSA's
 sequencer.  There is a SWIG wrapper and a high level sequencer interface that
@@ -175,7 +175,7 @@ I am extremely interested in supporting OS-X and Win32 sequencers as well, but
 I need platform expert who can help me.  Are you that person?  Please contact
 me if you would like to help.
 
-### Scripts for Sequencer
+===Scripts for Sequencer===
 
 To examine the hardware and software MIDI devices attached to your
 system, run the mididumphw.py script.
@@ -204,7 +204,7 @@ To play the example MIDI file, run the midiplay.py script.
 midiplay.py 128 0 mary.mid
 </pre>
 
-## Website, support, bug tracking, development etc.
+==Website, support, bug tracking, development etc.==
 
 You can find the latest code on the home page:
 https://github.com/vishnubob/python-midi/
@@ -212,7 +212,7 @@ https://github.com/vishnubob/python-midi/
 You can also check for known issues and submit new ones to the
 tracker: https://github.com/vishnubob/python-midi/issues/
 
-## Thanks
+==Thanks==
 
 I originally wrote this to drive the electro-mechanical instruments of Ensemble
 Robot, which is a Boston based group of artists, programmers, and engineers.
